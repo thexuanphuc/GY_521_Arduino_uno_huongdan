@@ -1,7 +1,7 @@
 
 # Làm quen với MPU6050(GY521) và Arduino Uno
 
-## Description
+## Mô tả
 Tìm hiểu cách hiệu chỉnh và so sánh hoạt động của các filter khác nhau. 
 
 ## Ví dụ
@@ -9,7 +9,7 @@ Tìm hiểu cách hiệu chỉnh và so sánh hoạt động của các filter k
 - **GY521_readCalibration_2**  Tìm giá trị offset
 - **GY521_test_main** So sánh hiệu quả Kalman filter và complementary filter
 
-## Giải thích pin trên MPU6050
+## Sơ đồ lắp ghép MPU6050 và Arduino Uno
 
 |  pin  |  Tên pin  |  Ý ngnghĩa        | 
 |:-----:|:---------:|:------------------|
@@ -21,6 +21,7 @@ Tìm hiểu cách hiệu chỉnh và so sánh hoạt động của các filter k
 |   5   |    XCL    |  auxiliary clock  |
 |   6   |    AD0    |  address          | 
 |   7   |    INT    |  interrupt        |
+![image](https://github.com/thexuanphuc/GY_521_Arduino_uno_huongdan/assets/120028673/cb7cfc91-209f-4732-ab36-cfe7c4a1dbc9)
 
 ## Cách hiệu chỉnh
 
@@ -41,7 +42,7 @@ Note cần gọi **Wire.begin()** trước **begin()**.
 
 ### Đọc giá trị
 
-#### Cài đặt thông số trước khi đọc giá trị
+### Cài đặt thông số trước khi đọc giá trị
 
 - **bool setAccelSensitivity(uint8_t as)** as = 0, 1, 2, 3 ==> 2g 4g 8g 16g
 - **uint8_t getAccelSensitivity()** returns 0, 1, 2, 3
@@ -51,14 +52,14 @@ Note cần gọi **Wire.begin()** trước **begin()**.
 = **bool getNormalize()** returns flag.
 
 
-#### Đọc giá trị từ cảm biến
+### Đọc giá trị từ cảm biến
 
 - **int16_t read()** đọc tất cả giá trị đo từ MPU6050.
 returns status = GY521_OK nếu thành công, giá trị góc đã qua bộ lọc complementary filter
 - **int16_t read_with_KF()** đọc tất cả giá trị đo từ MPU6050.
 returns status = GY521_OK nếu thành công, giá trị góc đã qua bộ lọc Kalman filter
 
-#### Xử lý dữ liệu đầu ra
+### Xử lý dữ liệu đầu ra
 
 Trước tiên phải gọi read() hoặc read_with_KF().
 
@@ -78,12 +79,12 @@ Trước tiên phải gọi read() hoặc read_with_KF().
 - **float get_roll_kalman()** Trả về góc roll(-180,180) sử dụng Kalman filter
 
 
-### Truy cập vào Register
+# Truy cập vào Register
 
 - **uint8_t setRegister(uint8_t reg, uint8_t value)**
 - **uint8_t getRegister(uint8_t reg)**
 
-#### Điều chỉnh độ nhạy của cảm biếm
+## Điều chỉnh độ nhạy của cảm biếm
 
 unit g = gravity == 9.81
 
@@ -102,6 +103,22 @@ unit dps = degrees per second.
 |   500 dps     |    1    |
 |  1000 dps     |    2    |
 |  2000 dps     |    3    |
+
+# Kết quả
+## Complementary filter
+![image](https://github.com/thexuanphuc/GY_521_Arduino_uno_huongdan/assets/120028673/46825858-a496-4470-bc81-906fa2017231)
+Comment: Tín hiệu góc bị trôi theo thời gian
+Comment: 
+## Kalman filter 
+![image](https://github.com/thexuanphuc/GY_521_Arduino_uno_huongdan/assets/120028673/7ce004bf-76fe-4ec7-a0d0-be08da77be9f)
+Comment: Sai số ở trạng thái nghỉ khoảng 0.1 degree
+![image](https://github.com/thexuanphuc/GY_521_Arduino_uno_huongdan/assets/120028673/09e5ffc3-7217-42fc-b23d-41582639aecf)
+Comment: Quay góc Roll 90 degree
+![image](https://github.com/thexuanphuc/GY_521_Arduino_uno_huongdan/assets/120028673/4be2fc10-3fb4-4b0b-a15a-8eec6398301f)
+Comment: Quay góc Pitch 90 degree 
+## So sánh complementary filter và Kalman filter
+![image](https://github.com/thexuanphuc/GY_521_Arduino_uno_huongdan/assets/120028673/37e03c8f-a321-4542-bd0e-707e0935a692)
+Comment: Kalman filter cho tín hiệu ổn định và không bị trôi theo thời gian
 
 ## Nguồn liên quan
   + https://github.com/RobTillaart/GY521
