@@ -11,16 +11,17 @@ Tìm hiểu cách hiệu chỉnh và so sánh hoạt động của các filter k
 
 ## Sơ đồ lắp ghép MPU6050 và Arduino Uno
 
-|  pin  |  Tên pin  |  Ý ngnghĩa        | 
-|:-----:|:---------:|:------------------|
-|   0   |    VCC    |  +5V              |
-|   1   |    GND    |  ground           |
-|   2   |    SCL    |  I2C clock        |
-|   3   |    SDA    |  I2C data         |
-|   4   |    XDA    |  auxiliary data   | 
-|   5   |    XCL    |  auxiliary clock  |
-|   6   |    AD0    |  address          | 
-|   7   |    INT    |  interrupt        |
+|  pin  |  Tên pin  |  Ý ngnghĩa        | Chân Arduino |
+|:-----:|:---------:|:------------------|--------------|
+|   0   |    VCC    |  +5V              |     5V       |
+|   1   |    GND    |  ground           |     GND      |
+|   2   |    SCL    |  I2C clock        |     A5       |
+|   3   |    SDA    |  I2C data         |     A4       |
+|   4   |    XDA    |  auxiliary data   |              |
+|   5   |    XCL    |  auxiliary clock  |              |
+|   6   |    AD0    |  address          |              |
+|   7   |    INT    |  interrupt        |              |
+
 ![image](https://github.com/thexuanphuc/GY_521_Arduino_uno_huongdan/assets/120028673/cb7cfc91-209f-4732-ab36-cfe7c4a1dbc9)
 
 ## Cách hiệu chỉnh
@@ -107,11 +108,11 @@ unit dps = degrees per second.
 # Kết quả
 ## Complementary filter
 ![image](https://github.com/thexuanphuc/GY_521_Arduino_uno_huongdan/assets/120028673/46825858-a496-4470-bc81-906fa2017231)
-Comment: Tín hiệu góc bị trôi theo thời gian
-Comment: 
+
+Tín hiệu góc bị trôi theo thời gian
 ## Kalman filter 
 ![image](https://github.com/thexuanphuc/GY_521_Arduino_uno_huongdan/assets/120028673/7ce004bf-76fe-4ec7-a0d0-be08da77be9f)
-Comment: Sai số ở trạng thái nghỉ khoảng 0.1 degree
+<!--Comment: Sai số ở trạng thái nghỉ khoảng 0.1 -->
 ![image](https://github.com/thexuanphuc/GY_521_Arduino_uno_huongdan/assets/120028673/09e5ffc3-7217-42fc-b23d-41582639aecf)
 Comment: Quay góc Roll 90 degree
 ![image](https://github.com/thexuanphuc/GY_521_Arduino_uno_huongdan/assets/120028673/4be2fc10-3fb4-4b0b-a15a-8eec6398301f)
