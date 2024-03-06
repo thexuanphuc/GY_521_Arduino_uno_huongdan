@@ -108,25 +108,21 @@ unit dps = degrees per second.
 # Kết quả
 ## Complementary filter
 ![Complementary_filter](https://github.com/thexuanphuc/GY_521_Arduino_uno_huongdan/assets/120028673/46825858-a496-4470-bc81-906fa2017231)
-* **Description:** Tín hiệu góc bị trôi theo thời gian.
+* Tín hiệu góc bị trôi theo thời gian.
 
 ## Kalman filter 
-![image](https://github.com/thexuanphuc/GY_521_Arduino_uno_huongdan/assets/120028673/7ce004bf-76fe-4ec7-a0d0-be08da77be9f)
+![kalman_filter](https://github.com/thexuanphuc/GY_521_Arduino_uno_huongdan/assets/120028673/7ce004bf-76fe-4ec7-a0d0-be08da77be9f)
+* Sai số ở trạng thái nghỉ khoảng 0.1.
 
-Sai số ở trạng thái nghỉ khoảng 0.1
+![kalman_filter](https://github.com/thexuanphuc/GY_521_Arduino_uno_huongdan/assets/120028673/09e5ffc3-7217-42fc-b23d-41582639aecf)
+* Quay góc Roll 90 degree.
 
-![image](https://github.com/thexuanphuc/GY_521_Arduino_uno_huongdan/assets/120028673/09e5ffc3-7217-42fc-b23d-41582639aecf)
-
-Quay góc Roll 90 degree
-
-![image](https://github.com/thexuanphuc/GY_521_Arduino_uno_huongdan/assets/120028673/4be2fc10-3fb4-4b0b-a15a-8eec6398301f)
-
-Quay góc Pitch 90 degree 
+![kalman_filter](https://github.com/thexuanphuc/GY_521_Arduino_uno_huongdan/assets/120028673/4be2fc10-3fb4-4b0b-a15a-8eec6398301f)
+* Quay góc Pitch 90 degree.
 
 ## So sánh complementary filter và Kalman filter
-![image](https://github.com/thexuanphuc/GY_521_Arduino_uno_huongdan/assets/120028673/37e03c8f-a321-4542-bd0e-707e0935a692)
-
-Kalman filter cho tín hiệu ổn định và không bị trôi theo thời gian
+![compare](https://github.com/thexuanphuc/GY_521_Arduino_uno_huongdan/assets/120028673/37e03c8f-a321-4542-bd0e-707e0935a692)
+* Kalman filter cho tín hiệu ổn định và không bị trôi theo thời gian.
 
 ## Nguồn liên quan
   + https://github.com/RobTillaart/GY521
