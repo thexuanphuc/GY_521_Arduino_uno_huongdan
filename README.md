@@ -35,6 +35,7 @@ Sketch file readCalibration2.ino trong examples để lấy giá trị offset ax
 
 - **GY521(uint8_t address = 0x69, , TwoWire*wire = &Wire)** Constructor cho MPU với địa chỉ mặc định. 
 - **bool begin()** Returns true nếu phát hiện thiết bị trên I2C bus
+  
 Note cần gọi **Wire.begin()** trước **begin()**.
 - **bool isConnected()** returns true nếu có thiết bị đang sử dụng I2C bus
 
@@ -105,6 +106,6 @@ unit dps = degrees per second.
 ## Nguồn liên quan
   + https://github.com/RobTillaart/GY521
   + https://invensense.tdk.com/wp-content/uploads/2015/02/MPU-6000-Datasheet1.pdf
-  + https://cdn.sparkfun.com/datasheets/Sensors/Accelerometers/RM-MPU-6000A.pdf register map.
+  + https://cdn.sparkfun.com/datasheets/Sensors/Accelerometers/RM-MPU-6000A.pdf.
   + https://github.com/RobTillaart/Angle
   + https://github.com/RobTillaart/AngleConverter
