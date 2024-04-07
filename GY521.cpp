@@ -102,8 +102,7 @@ bool GY521::wakeup()
 }
 
 
-int16_t GY521::read()
-{
+int16_t GY521::read(){
   uint32_t now = millis();
   if (_throttle)
   {
@@ -241,8 +240,7 @@ int16_t GY521::read()
 }
 
 
-int16_t GY521::read_with_KF()
-{
+int16_t GY521::read_with_KF(){
   uint32_t now = millis();
   if (_throttle)
   {
