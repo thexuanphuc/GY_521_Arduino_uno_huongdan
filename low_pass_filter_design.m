@@ -9,7 +9,14 @@ w1d.Variable = 'z^-1'
 [num1 den1] = (tfdata(w1d))
 num1 = cell2mat(num1);
 den1 = cell2mat(den1);
-% coefficient of filter:
+w1d
 
+% coefficient of filter:
 % num1: 0.0912408759124087	0.182481751824818	0.0912408759124087
 % den1: 1	-0.958029197080292	0.322992700729927
+% implement in form:
+%
+  % 
+  % 0.09124 + 0.1825 z^-1 + 0.09124 z^-2    Y_out
+  % ------------------------------------  = ------- =  w1d 
+  %     1 - 0.958 z^-1 + 0.323 z^-2         X_in
